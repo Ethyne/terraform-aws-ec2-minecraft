@@ -34,7 +34,7 @@ data "template_file" "user_data" {
 resource "aws_instance" "minecraft" {
   ami = data.aws_ami.centos.id
   instance_type = "t2.medium"
-  subnet_id = data.terraform_remote_state.vpc.outputs.vpc_id
+  subnet_id = data.terraform_remote_state.vpc.outputs.subnet_id
   vpc_security_group_ids = [var.sg_id]
   associate_public_ip_address = true
   user_data = data.template_file.user_data.rendered
