@@ -21,12 +21,12 @@ runcmd:
   - sudo su david
   - mkdir /home/david/minecraft
   - sudo cd /home/david/minecraft
-  - "sudo wget https://launcher.mojang.com/v1/objects/1b557e7b033b583cd9f66746b7a9ab1ec1673ced/server.jar"
-  - sudo mv server.jar /home/david/minecraft/minecraft_server.1.16.5.jar
+  - "sudo wget https://launcher.mojang.com/v1/objects/a16d67e5807f57fc4e550299cf20226194497dc2/server.jar"
+  - sudo mv server.jar /home/david/minecraft/minecraft_server.1.17.1.jar
   - sudo yum -y install screen
   - sudo yum -y install java-11-openjdk-devel
-  - sudo java -Xmx1024M -Xms1024M -jar /home/david/minecraft/minecraft_server.1.16.5.jar nogui
+  - sudo java -Xmx1024M -Xms1024M -jar /home/david/minecraft/minecraft_server.1.17.1.jar nogui
   - echo "eula=true" > /home/david/minecraft/eula.txt
   - echo "eula=true" > /eula.txt
   - sudo screen -S "Minecraft server"
-  - sudo java -Xmx1024M -Xms1024M -jar /home/david/minecraft/minecraft_server.1.16.5.jar nogui
+  - sudo java -Xmx1024M -Xms1024M -jar /home/david/minecraft/minecraft_server.1.17.1.jar nogui
