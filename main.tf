@@ -28,7 +28,7 @@ data "aws_ami" "centos" {
 }
 
 data "template_file" "user_data" {
-  template = file("scripts/cloudinit.yaml")
+  template = file("${path.module}/scripts/cloudinit.yaml")
 }
 
 resource "aws_instance" "minecraft" {
