@@ -11,6 +11,7 @@ provider "aws" {
   region = data.terraform_remote_state.vpc.outputs.region
 }
 
+# Searches for a current version of CentOS 8 
 data "aws_ami" "centos" {
   most_recent = true
 
@@ -27,6 +28,7 @@ data "aws_ami" "centos" {
   owners = ["125523088429"] 
 }
 
+# Passes Cloudinit for configuration of Minecraft server
 data "template_file" "user_data" {
   template = file("${path.module}/scripts/cloudinit.yaml")
 }
@@ -47,6 +49,7 @@ resource "aws_instance" "minecraft" {
   }
 }
 
+# VPC workspace in Howes Org
 data "terraform_remote_state" "vpc" {
   backend = "remote"
   config = {
